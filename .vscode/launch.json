@@ -10,7 +10,11 @@
       "request": "launch",
       "module": "homeassistant",
       "justMyCode": false,
-      "args": ["--debug", "-c", "config"]
+      "args": [
+        "--debug",
+        "-c",
+        "config"
+      ]
     },
     {
       // Debug by attaching to local Home Asistant server using Remote Python Debugger.
@@ -39,6 +43,24 @@
         {
           "localRoot": "${workspaceFolder}",
           "remoteRoot": "/usr/src/homeassistant"
+        }
+      ]
+    },
+    {
+      "version": "0.2.0",
+      "configurations": [
+        {
+          "name": "Supervisor remote debug",
+          "type": "python",
+          "request": "attach",
+          "port": 33333,
+          "host": "127.0.0.1",
+          "pathMappings": [
+            {
+              "localRoot": "${workspaceFolder}",
+              "remoteRoot": "/usr/src/hassio"
+            }
+          ]
         }
       ]
     }
